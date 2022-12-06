@@ -17,6 +17,7 @@ query GetTournamentsByUser($userId: ID!) {
         name
         slug
         startAt
+        isOnline
       }
     }
   }

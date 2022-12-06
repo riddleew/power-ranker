@@ -26,6 +26,8 @@ def get_tournaments():
       str_date = tourney_start.strftime('%m-%d-%Y')
 
       if tourney_start >= cut_off_date_start and tourney_start <= cut_off_date_end:
+        if tournament['isOnline']:
+          continue
         print(tournament['name'] + '\t' + str_date)
         tour_set.add(tournament['slug'])
       elif tourney_start < cut_off_date_start:
@@ -57,7 +59,9 @@ client = GraphQLClient('https://api.smash.gg/gql/' + api_version)
 client.inject_token('Bearer ' + auth_token)
 
 get_tournaments()
+debug = -1
 
-
-
-
+i = 1
+for tourney in tour_set:
+  print(f'{i}: {tourney}')
+  i = i + 1
