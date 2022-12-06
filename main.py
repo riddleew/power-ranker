@@ -5,7 +5,7 @@ from graphqlclient import GraphQLClient
 
 import queries
 
-def get_tournaments():
+def set_tournaments():
   for user_id, player_name in user_dict.items():
     print("Processing " + player_name + "'s tournaments...")
     result = client.execute(queries.get_tournies_by_user, {"userId": user_id})
@@ -29,17 +29,18 @@ def get_tournaments():
         if tournament['isOnline']:
           continue
         print(tournament['name'] + '\t' + str_date)
-        tour_set.add(tournament['slug'])
+        tour_dict[tournament['slug']] = tournament['name']
       elif tourney_start < cut_off_date_start:
         print('Tournament outside of season window --- ' + tournament['name'] + '\t' + str_date)
         break
+
 
 auth_token = 'c4a231a21516bbe65650002b27d2dbeb'
 api_version = 'alpha'
 ultimate_id = '1386'
 
 
-tour_set = set()
+tour_dict = dict()
 user_dict = dict()
 
 with open('user-ids.txt', 'r') as file:
@@ -58,10 +59,15 @@ with open('user-ids.txt', 'r') as file:
 client = GraphQLClient('https://api.smash.gg/gql/' + api_version)
 client.inject_token('Bearer ' + auth_token)
 
-get_tournaments()
+set_tournaments()
 debug = -1
 
 i = 1
-for tourney in tour_set:
-  print(f'{i}: {tourney}')
-  i = i + 1
+with open('tourney_names.txt', 'w') as names, open('tourney_slugs.txt', 'w') as slugs:
+  
+  for tourney_slug, tourney_name in tour_dict.items():
+    names.write(f'{tourney_name}\n')
+    slugs.write(f'{tourney_slug}\n')
+    
+    print(f'{i}: {tourney_slug}')
+    i = i + 1
