@@ -38,6 +38,7 @@ def set_tournaments():
 auth_token = 'c4a231a21516bbe65650002b27d2dbeb'
 api_version = 'alpha'
 ultimate_id = '1386'
+name = 'jer'
 
 
 tour_dict = dict()
