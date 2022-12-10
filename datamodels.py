@@ -25,3 +25,4 @@ class Event:
         self.id = event_dict['id']
         self.num_entrants = event_dict['numEntrants']
         self.competition_tier = event_dict['competitionTier']
+        self.is_teams_event = event_dict['teamRosterSize'] != None

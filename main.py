@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+from urllib.error import URLError
 
 from graphqlclient import GraphQLClient
 
@@ -15,7 +16,8 @@ def get_token():
 
 def collect_user_ids_from_file():
   """Reads through a text file and compiles a dictionary of user_id -> player_name."""
-  with open('user-ids.txt', 'r') as file:
+
+  with open('user-ids-half.txt', 'r') as file:
     delimiter = '---'
     for line in file:
       if line.startswith('#'):
@@ -38,7 +40,18 @@ def set_tournaments():
   for user_id, player_name in user_dict.items():
     print("Processing " + player_name + "'s tournaments...")
     query_variables = {"userId": user_id}
-    result = client.execute(queries.get_tournies_by_user, query_variables)
+    try :
+      result = client.execute(queries.get_tournies_by_user, query_variables)
+    except URLError:
+      try_attempt_ctr = 1
+      total_attempts = 3
+      while try_attempt_ctr <= total_attempts:
+        try:
+          result = client.execute
+          break
+        except URLError:
+          try_attempt_ctr
+    
     res_data = json.loads(result)
     if 'errors' in res_data:
         print('Error:')
@@ -78,6 +91,24 @@ def write_tourney_names_to_files(tournies):
       print(f'{i}: {tourney.slug}')
       i = i + 1
 
+def set_events(tournies):
+  events = []
+  global client
+  
+  for tourney in tournies:
+    query_variables = {"slug": tourney.slug}
+    result = client.execute(queries.get_event_by_tournament, query_variables)
+    res_data = json.loads(result)
+    if 'errors' in res_data:
+        print('Error:')
+        print(res_data['errors'])
+
+    for event_json in res_data['data']['tournament']['events']:
+      event = Event(event_json)
+      if event.is_teams_event:
+        continue
+      
+  return events
 
 auth_token = get_token()
 api_version = 'alpha'
@@ -93,3 +124,4 @@ collect_user_ids_from_file()
 tournies = sorted(set_tournaments().values(), key=lambda tourney: tourney.start_time)
 
 write_tourney_names_to_files(tournies)
+set_events(tournies)
