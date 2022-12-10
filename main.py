@@ -153,7 +153,7 @@ def set_events(tournies):
 
 def write_events_to_file(tournies):
   """Write current event results to file."""
-  
+
   with open('tourney_events.txt', 'w') as file:
     for tourney in tournies.values():
       file.write(f'{tourney.name}\n')
@@ -164,7 +164,7 @@ auth_tokens = get_tokens()
 current_token_index = 0
 api_version = 'alpha'
 request_count = 0
-client = GraphQLClient('https://api.smash.gg/gql/' + api_version)
+client = GraphQLClient('https://api.start.gg/gql/' + api_version)
 reset_client()
 ultimate_id = '1386'
 user_dict = dict()
