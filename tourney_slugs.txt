@@ -1,66 +1,61 @@
-tournament/cavalry-clash-9
-tournament/vandertilted-69
-tournament/kumite-in-tennessee-2022-the-finale
-tournament/bourbon-state-gaming-double-barreled-vi
-tournament/cavalry-clash-8
-tournament/don-t-get-tilted-63-happy-birthday-eve
-tournament/don-t-get-tilted-62-1
-tournament/sheltowee-smash-n-strive-ii
-tournament/don-t-get-tilted-61-1
-tournament/don-t-get-tilted-57-1
-tournament/meteor-smash-39
-tournament/don-t-get-tilted-56-1
-tournament/the-mothership-invitational-1-500
-tournament/meteor-smash-43
-tournament/tripoint-stadium
-tournament/ignition-294
-tournament/meteor-smash-42-1
-tournament/lunar-lounge-28-1
-tournament/smashed-bros-34
-tournament/meteor-smash-41-1
-tournament/lunar-lounge-26
-tournament/don-t-get-tilted-59-happy-halloween
-tournament/smashed-bros-33
-tournament/lunar-lounge-25
-tournament/meteor-smash-40
-tournament/lunar-lounge-24
-tournament/smashed-bros-32
-tournament/lunar-lounge-29-2
-tournament/smashed-bros-35-50-pot-bonus
-tournament/lunar-lounge-27-1
-tournament/lunar-lounge-22
-tournament/don-t-get-tilted-60-1
-tournament/don-t-get-tilted-58-happy-halloween
-tournament/the-big-house-10
-tournament/dreamhack-atlanta-2022-fgc
-tournament/campus-clash-fall-2022
-tournament/bad-wolf-battles-7-2
-tournament/the-card-n-all-colosseum-36
-tournament/the-card-n-all-colosseum-31
-tournament/scrims-showdown-56
-tournament/jump-scare-2-electric-boogaloo
-tournament/ignition-289
-tournament/scrims-showdown-54
-tournament/rockford-rumble-24
-tournament/ignition-287
-tournament/scrims-showdown-52
-tournament/short-hop-saturdays-60
-tournament/the-card-n-all-colosseum-30
-tournament/the-card-n-all-colosseum-29
-tournament/fight-night-65
-tournament/fight-night-63
-tournament/fight-night-62
-tournament/fight-night-61-1
-tournament/lunar-lounge-23
-tournament/fight-night-59
-tournament/fight-night-60
-tournament/fight-night-66-dead-week
-tournament/fight-night-64
-tournament/apocalypse-7-1
-tournament/apocalypse-4
-tournament/vandertilted-67
-tournament/the-card-n-all-colosseum-37
-tournament/the-card-n-all-colosseum-35
-tournament/the-card-n-all-colosseum-34
-tournament/the-card-n-all-colosseum-33-happy-halloween
-tournament/the-card-n-all-colosseum-32
+2022-10-01 10:00:00 --- tournament/the-mothership-invitational-1-500 --- Louisville, KY
+2022-10-02 18:00:00 --- tournament/the-card-n-all-colosseum-29 --- Louisville, KY
+2022-10-03 19:00:00 --- tournament/don-t-get-tilted-56-1 --- Lexington, KY
+2022-10-04 18:00:00 --- tournament/fight-night-59 --- Morehead, KY
+2022-10-05 19:00:00 --- tournament/lunar-lounge-22 --- Louisville, KY
+2022-10-07 11:00:00 --- tournament/the-big-house-10 --- Detroit, MI
+2022-10-07 19:00:00 --- tournament/vandertilted-67 --- Nashville, TN
+2022-10-07 20:00:00 --- tournament/meteor-smash-39 --- Louisville, KY
+2022-10-08 19:00:00 --- tournament/bad-wolf-battles-7-2 --- Berea, KY
+2022-10-09 18:00:00 --- tournament/the-card-n-all-colosseum-30 --- Louisville, KY
+2022-10-10 19:00:00 --- tournament/don-t-get-tilted-57-1 --- Lexington, KY
+2022-10-11 18:00:00 --- tournament/fight-night-60 --- Morehead, KY
+2022-10-12 19:00:00 --- tournament/lunar-lounge-23 --- Louisville, KY
+2022-10-14 18:00:00 --- tournament/apocalypse-4 --- Clarksville, TN
+2022-10-14 19:30:00 --- tournament/smashed-bros-32 --- Louisville, KY
+2022-10-15 12:00:00 --- tournament/cavalry-clash-8 --- Louisville, KY
+2022-10-16 18:00:00 --- tournament/the-card-n-all-colosseum-31 --- Louisville, KY
+2022-10-17 19:00:00 --- tournament/don-t-get-tilted-58-happy-halloween --- Lexington, KY
+2022-10-18 18:00:00 --- tournament/fight-night-61-1 --- Morehead, KY
+2022-10-19 19:00:00 --- tournament/lunar-lounge-24 --- Louisville, KY
+2022-10-21 20:00:00 --- tournament/meteor-smash-40 --- Louisville, KY
+2022-10-22 10:30:00 --- tournament/bourbon-state-gaming-double-barreled-vi --- Lexington, KY
+2022-10-23 18:00:00 --- tournament/the-card-n-all-colosseum-32 --- Louisville, KY
+2022-10-25 18:00:00 --- tournament/fight-night-62 --- Morehead, KY
+2022-10-26 19:00:00 --- tournament/lunar-lounge-25 --- Louisville, KY
+2022-10-28 16:30:00 --- tournament/kumite-in-tennessee-2022-the-finale --- Lebanon, TN
+2022-10-28 19:00:00 --- tournament/vandertilted-69 --- Nashville, TN
+2022-10-28 20:00:00 --- tournament/smashed-bros-33 --- Louisville, KY
+2022-10-30 18:00:00 --- tournament/the-card-n-all-colosseum-33-happy-halloween --- Louisville, KY
+2022-10-31 19:00:00 --- tournament/don-t-get-tilted-59-happy-halloween --- Lexington, KY
+2022-11-01 18:00:00 --- tournament/fight-night-63 --- Morehead, KY
+2022-11-02 19:00:00 --- tournament/lunar-lounge-26 --- Louisville, KY
+2022-11-04 20:00:00 --- tournament/meteor-smash-41-1 --- Louisville, KY
+2022-11-06 18:00:00 --- tournament/the-card-n-all-colosseum-34 --- Louisville, KY
+2022-11-07 19:00:00 --- tournament/don-t-get-tilted-60-1 --- Lexington, KY
+2022-11-08 18:00:00 --- tournament/fight-night-64 --- Morehead, KY
+2022-11-09 19:00:00 --- tournament/lunar-lounge-27-1 --- Louisville, KY
+2022-11-11 20:00:00 --- tournament/smashed-bros-34 --- Louisville, KY
+2022-11-12 00:00:00 --- tournament/cavalry-clash-9 --- Louisville, KY
+2022-11-12 00:00:00 --- tournament/campus-clash-fall-2022 --- Huntington, WV
+2022-11-13 18:00:00 --- tournament/the-card-n-all-colosseum-35 --- Louisville, KY
+2022-11-14 19:00:00 --- tournament/don-t-get-tilted-61-1 --- Lexington, KY
+2022-11-15 18:00:00 --- tournament/fight-night-65 --- Morehead, KY
+2022-11-16 19:00:00 --- tournament/lunar-lounge-28-1 --- Louisville, KY
+2022-11-18 12:00:00 --- tournament/dreamhack-atlanta-2022-fgc --- Atlanta, GA
+2022-11-18 18:00:00 --- tournament/apocalypse-7-1 --- Clarksville, TN
+2022-11-18 20:00:00 --- tournament/meteor-smash-42-1 --- Louisville, KY
+2022-11-19 11:00:00 --- tournament/sheltowee-smash-n-strive-ii --- Morehead, KY
+2022-11-20 18:00:00 --- tournament/the-card-n-all-colosseum-36 --- Louisville, KY
+2022-11-21 19:00:00 --- tournament/don-t-get-tilted-62-1 --- Lexington, KY
+2022-11-23 19:00:00 --- tournament/ignition-294 --- Skokie, IL
+2022-11-25 19:30:00 --- tournament/smashed-bros-35-50-pot-bonus --- Louisville, KY
+2022-11-26 11:00:00 --- tournament/tripoint-stadium --- Romeoville, IL
+2022-11-27 18:00:00 --- tournament/the-card-n-all-colosseum-37 --- Louisville, KY
+2022-11-28 19:00:00 --- tournament/don-t-get-tilted-63-happy-birthday-eve --- Lexington, KY
+2022-11-29 18:00:00 --- tournament/fight-night-66-dead-week --- Morehead, KY
+2022-11-30 19:00:00 --- tournament/lunar-lounge-29-2 --- Louisville, KY
+2022-12-02 20:00:00 --- tournament/meteor-smash-43 --- Louisville, KY
+2022-12-05 19:00:00 --- tournament/don-t-get-tilted-64-1 --- Lexington, KY
+2022-12-07 19:00:00 --- tournament/lunar-lounge-30 --- Louisville, KY
+2022-12-08 19:00:00 --- tournament/al-119-dragons-lair --- Newport, KY
