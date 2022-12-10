@@ -30,7 +30,7 @@ get_event_by_tournament = '''
 query GetEventByTournament($slug: String!) {
   tournament(slug: $slug) {
   	events(filter: {videogameId: [1386]}) {
-     id
+      id
       name
       numEntrants
       teamRosterSize {
