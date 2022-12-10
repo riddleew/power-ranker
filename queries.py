@@ -33,6 +33,7 @@ query GetEventByTournament($slug: String!) {
       id
       name
       numEntrants
+      competitionTier
       teamRosterSize {
         minPlayers
       }
