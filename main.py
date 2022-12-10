@@ -113,7 +113,7 @@ def write_tourney_names_to_files(tournies):
   i = 1
   with open('tourney_names.txt', 'w') as names, open('tourney_slugs.txt', 'w') as slugs:
     
-    for tourney in tournies:
+    for tourney in tournies.values():
       names.write(f'{tourney.start_time} --- {tourney.name} --- {tourney.city}, {tourney.state}\n')
       slugs.write(f'{tourney.start_time} --- {tourney.slug} --- {tourney.city}, {tourney.state}\n')
       
@@ -128,9 +128,9 @@ def set_events(tournies):
   global client
   filter_names = {'squad strike', 'crew battle', 'redemption', 'ladder', 'doubles', 'amateur'}
   
-  for tourney in tournies:
-    print(f'\n{tourney.name}')
-    query_variables = {"slug": tourney.slug}
+  for tourney_slug, tourney_obj in tournies.items():
+    print(f'\n{tourney_obj.name}')
+    query_variables = {"slug": tourney_slug}
     result = execute_query(queries.get_event_by_tournament, query_variables)
     res_data = json.loads(result)
     if 'errors' in res_data:
@@ -147,18 +147,15 @@ def set_events(tournies):
       if is_not_singles:
         continue
       
+      tournies[tourney_slug].events.append(event)
       print(f'---{event.name}')
-      add_element_to_tourney_to_events(tourney.slug, event)
 
-
-def add_element_to_tourney_to_events(tourney_slug, event):
-  """Updates tourney_to_events mapping."""
-  
-  if tourney_slug not in tourney_to_events:
-    tourney_to_events[tourney_slug] = []
-  
-  tourney_to_events[tourney_slug].append(event)
-
+def write_events_to_file(tournies):
+  with open('tourney_events.txt', 'w') as file:
+    for tourney in tournies.values():
+      file.write(f'{tourney.name}\n')
+      for event in tourney.events:
+        file.write(f'---{event.name}\n')
 
 auth_tokens = get_tokens()
 current_token_index = 0
@@ -174,18 +171,11 @@ request_threshold = 79
 
 collect_user_ids_from_file()
 
-# Returns a dict of tournies, and then converts it to a sorted list of tournies.
-# Dict is initially used to guard against duplicate tourney entries.
-tournies = sorted(set_tournaments().values(), key=lambda tourney: tourney.start_time)
+tournies = dict(sorted(set_tournaments().items(), key=lambda item: item[1].start_time))
 
 write_tourney_names_to_files(tournies)
 set_events(tournies)
-with open('tourney_events.txt', 'w') as file:
-  for tourney_slug, events in tourney_to_events.items():
-    file.write(f'{tourney_slug}\n')
-    for event in events:
-      file.write(f'---{event.name}\n')
 
-debug = -1
+write_events_to_file(tournies)
 
 # Add all_events_removed_from_tourney idea
