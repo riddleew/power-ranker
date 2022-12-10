@@ -7,11 +7,13 @@ import queries
 from datamodels import *
 
 def get_token():
+  """Retrieves oauth token from a text file."""
   with open('token.txt', 'r') as file:
     return file.readline()
 
-    
+
 def collect_user_ids_from_file():
+  """Reads through a text file and compiles a dictionary of user_id -> player_name."""
   with open('user-ids.txt', 'r') as file:
     delimiter = '---'
     for line in file:
@@ -28,6 +30,9 @@ def collect_user_ids_from_file():
 
 
 def set_tournaments():
+  """Runs a tournament query for each user that was collected.
+  Returns a dictonary of tourney_slug -> TourneyObj.
+  """
   tourney_dict = dict()
   for user_id, player_name in user_dict.items():
     print("Processing " + player_name + "'s tournaments...")
@@ -59,6 +64,9 @@ def set_tournaments():
 
 
 def write_tourney_names_to_files(tournies):
+  """Writes tourney names/slugs with dates to text files.
+  Allows for a simple overview summary of tournaments.
+  """
   i = 1
   with open('tourney_names.txt', 'w') as names, open('tourney_slugs.txt', 'w') as slugs:
     
@@ -77,7 +85,7 @@ ultimate_id = '1386'
 user_dict = dict()
 
 collect_user_ids_from_file()
-# Returns a dict of tournies, and then converts it to a sorted list of tournies
-# Dict is initially used to guard against duplicate tourney entries
+# Returns a dict of tournies, and then converts it to a sorted list of tournies.
+# Dict is initially used to guard against duplicate tourney entries.
 tournies = sorted(set_tournaments().values(), key=lambda tourney: tourney.start_time)
 write_tourney_names_to_files(tournies)
