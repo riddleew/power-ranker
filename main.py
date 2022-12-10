@@ -6,7 +6,11 @@ from graphqlclient import GraphQLClient
 import queries
 from datamodels import *
 
+def get_token():
+  with open('token.txt', 'r') as file:
+    return file.readline()
 
+    
 def collect_user_ids_from_file():
   with open('user-ids.txt', 'r') as file:
     delimiter = '---'
@@ -65,7 +69,7 @@ def write_tourney_names_to_files(tournies):
       print(f'{i}: {tourney.slug}')
       i = i + 1
 
-auth_token = 'c4a231a21516bbe65650002b27d2dbeb'
+auth_token = get_token()
 api_version = 'alpha'
 client = GraphQLClient('https://api.smash.gg/gql/' + api_version)
 client.inject_token('Bearer ' + auth_token)
