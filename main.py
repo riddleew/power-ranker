@@ -6,6 +6,7 @@ from graphqlclient import GraphQLClient
 import queries
 from datamodels import *
 
+
 def get_token():
   """Retrieves oauth token from a text file."""
   with open('token.txt', 'r') as file:
@@ -77,6 +78,7 @@ def write_tourney_names_to_files(tournies):
       print(f'{i}: {tourney.slug}')
       i = i + 1
 
+
 auth_token = get_token()
 api_version = 'alpha'
 client = GraphQLClient('https://api.smash.gg/gql/' + api_version)
@@ -85,7 +87,9 @@ ultimate_id = '1386'
 user_dict = dict()
 
 collect_user_ids_from_file()
+
 # Returns a dict of tournies, and then converts it to a sorted list of tournies.
 # Dict is initially used to guard against duplicate tourney entries.
 tournies = sorted(set_tournaments().values(), key=lambda tourney: tourney.start_time)
+
 write_tourney_names_to_files(tournies)
