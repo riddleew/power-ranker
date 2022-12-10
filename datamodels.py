@@ -23,6 +23,8 @@ class Tournament:
 class Event:
     def __init__(self, event_dict):
         self.id = event_dict['id']
+        self.slug = event_dict['slug']
+        self.name = event_dict['name']
         self.num_entrants = event_dict['numEntrants']
         self.competition_tier = event_dict['competitionTier']
         self.is_teams_event = event_dict['teamRosterSize'] != None
