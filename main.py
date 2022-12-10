@@ -150,7 +150,10 @@ def set_events(tournies):
       tournies[tourney_slug].events.append(event)
       print(f'---{event.name}')
 
+
 def write_events_to_file(tournies):
+  """Write current event results to file."""
+  
   with open('tourney_events.txt', 'w') as file:
     for tourney in tournies.values():
       file.write(f'{tourney.name}\n')
