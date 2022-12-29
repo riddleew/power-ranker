@@ -180,13 +180,23 @@ def collect_tournies_for_users():
         if out_of_bounds_ctr == 3:
           break
         continue
-
       out_of_bounds_ctr = 0
-      
+
+      gamerTag = res_data['data']['user']['player']['gamerTag']
+
       event_dict[event.slug] = event
+
       # If tournament is out of state, keep track of who attended from Kentucky
       if tourney.state != "KY":
-        gamerTag = res_data['data']['user']['player']['gamerTag']
+        if user_id in user_stats:
+          user_stats[user_id].all_tournies.append(tourney)
+        else:
+          user = User()
+          user.user_id = user_id
+          user.all_tournies.append(tourney)
+          user.gamer_tag = gamerTag
+          user_stats[user_id] = user
+
         if tourney.slug in tourney_dict:
           tourney_dict[tourney.slug].notable_entries.append(gamerTag)
         else:
@@ -194,8 +204,25 @@ def collect_tournies_for_users():
           tourney_dict[tourney.slug] = tourney
       else:
         tourney_dict[tourney.slug] = tourney
-      
+
+        if user_id in user_stats:
+          user_stats[user_id].all_tournies.append(tourney)
+          user_stats[user_id].ky_tournies.append(tourney)
+        else:
+          user = User()
+          user.user_id = user_id
+          user.all_tournies.append(tourney)
+          user.ky_tournies.append(tourney)
+          user.gamer_tag = gamerTag
+          user_stats[user_id] = user
+        
   return tourney_dict
+
+
+def write_user_stats_to_file(user_stats):
+  with open('user_stats.txt', 'w') as file:
+    for user in user_stats.values():
+      file.write(f'{user.gamer_tag} --- All tournies: {len(user.all_tournies)} --- KY events: {len(user.ky_tournies)}\n')
 
 
 auth_tokens = get_tokens()
@@ -206,6 +233,7 @@ client = GraphQLClient('https://api.start.gg/gql/' + api_version)
 reset_client()
 ultimate_id = '1386'
 user_dict = dict()
+user_stats = dict()
 tourney_to_events = dict()
 event_dict = dict()
 removed_events = set()
@@ -220,7 +248,7 @@ collect_user_ids_from_file()
 tournies = dict(sorted(collect_tournies_for_users().items(), key=lambda kvp: kvp[1].start_time))
 
 write_tourney_names_to_files(tournies)
-
+write_user_stats_to_file(user_stats)
 
 
 # TODO: Add all_events_removed_from_tourney idea

@@ -6,7 +6,9 @@ from datetime import datetime
 class User:
     def __init__(self):
         self.user_id = ""
-        self.tournaments = []
+        self.gamer_tag = ""
+        self.all_tournies = []
+        self.ky_tournies = []
 
 class Tournament:
     def __init__(self, tourney_dict):
