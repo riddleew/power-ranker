@@ -3,6 +3,7 @@ import json
 from urllib.error import URLError
 
 from graphqlclient import GraphQLClient
+import gspread
 
 import queries
 from datamodels import *
@@ -51,6 +52,7 @@ def collect_user_ids_from_file():
       user_dict[user_id] = player_name
 
 
+# Currently deprecated
 def set_tournaments():
   """Runs a tournament query for each user that was collected.
   Returns a dictonary of tourney_slug -> TourneyObj.
@@ -114,51 +116,87 @@ def write_tourney_names_to_files(tournies):
   with open('tourney_names.txt', 'w') as names, open('tourney_slugs.txt', 'w') as slugs:
     
     for tourney in tournies.values():
-      names.write(f'{tourney.start_time} --- {tourney.name} --- {tourney.city}, {tourney.state}\n')
-      slugs.write(f'{tourney.start_time} --- {tourney.slug} --- {tourney.city}, {tourney.state}\n')
+      notable_entries = ""
+      if tourney.notable_entries:
+        notable_entries = "--- " + ", ".join(tourney.notable_entries)
+      url = 'https://start.gg/' + tourney.slug
+      names.write(f'{tourney.start_time} --- {tourney.name} --- {tourney.city}, {tourney.state} --- {url} {notable_entries}\n')
+      slugs.write(f'{tourney.start_time} --- {tourney.slug} --- {tourney.city}, {tourney.state} {notable_entries}\n')
       
-      print(f'{i}: {tourney.slug}')
       i = i + 1
 
 
-def set_events(tournies):
-  """Queries events per tournaments. Attempts to filter out non-Singles events.
-  Adds results to collection.
-  """
-  global client
+def collect_tournies_for_users():
+  """Gathers a collection of tournaments and associated events for a user in a given season."""
+
+  tourney_dict = dict()
+  out_of_bounds_ctr = 0
+
+  # Keywords that should help exclude non-viable events
   filter_names = {'squad strike', 'crew battle', 'redemption', 'ladder', 'doubles', 'amateur'}
   
-  for tourney_slug, tourney_obj in tournies.items():
-    print(f'\n{tourney_obj.name}')
-    query_variables = {"slug": tourney_slug}
-    result = execute_query(queries.get_event_by_tournament, query_variables)
+  for user_id, player_name in user_dict.items():
+    print("Processing " + player_name + "'s tournaments...")
+    query_variables = {"userId": user_id}
+
+    result = execute_query(queries.get_events_by_user, query_variables)
     res_data = json.loads(result)
     if 'errors' in res_data:
         print('Error:')
         print(res_data['errors'])
 
-    for event_json in res_data['data']['tournament']['events']:
+    for event_json in res_data['data']['user']['events']['nodes']:
+      cut_off_date_start = datetime(2022, 10, 1)
+      cut_off_date_end = datetime(2022, 12, 31)
+      
+      tourney = Tournament(event_json['tournament'])
       event = Event(event_json)
+      event.tourney = tourney
+      tourney.events.append(event)
 
-      # Filter out events that are most likely not Singles events
-      if event.is_teams_event:
+      # Validate PR eligibility
+      if tourney.is_online:
+        removed_events.add(event)
         continue
+      if event.num_entrants < 12 and tourney.start_time < datetime(2022, 11, 14):
+        removed_events.add(event)
+        continue
+      if event.num_entrants < 8 and tourney.start_time >= datetime(2022, 11, 14):
+        removed_events.add(event)
+        continue
+      if event.is_teams_event:
+        removed_events.add(event)
+        continue
+
       is_not_singles = 1 in [name in event.name.lower() for name in filter_names]
       if is_not_singles:
+        removed_events.add(event)
         continue
+
+      if tourney.start_time < cut_off_date_start or tourney.start_time > cut_off_date_end:
+        # If three consecutive tournaments being processed is outside of the season's window,
+        # we can feel confident that the remaining tournaments to process are also out of bounds
+        out_of_bounds_ctr += 1
+        if out_of_bounds_ctr == 3:
+          break
+        continue
+
+      out_of_bounds_ctr = 0
       
-      tournies[tourney_slug].events.append(event)
-      print(f'---{event.name}')
+      event_dict[event.slug] = event
+      # If tournament is out of state, keep track of who attended from Kentucky
+      if tourney.state != "KY":
+        gamerTag = res_data['data']['user']['player']['gamerTag']
+        if tourney.slug in tourney_dict:
+          tourney_dict[tourney.slug].notable_entries.append(gamerTag)
+        else:
+          tourney.notable_entries.append(gamerTag)
+          tourney_dict[tourney.slug] = tourney
+      else:
+        tourney_dict[tourney.slug] = tourney
+      
+  return tourney_dict
 
-
-def write_events_to_file(tournies):
-  """Write current event results to file."""
-
-  with open('tourney_events.txt', 'w') as file:
-    for tourney in tournies.values():
-      file.write(f'{tourney.name}\n')
-      for event in tourney.events:
-        file.write(f'---{event.name}\n')
 
 auth_tokens = get_tokens()
 current_token_index = 0
@@ -169,16 +207,21 @@ reset_client()
 ultimate_id = '1386'
 user_dict = dict()
 tourney_to_events = dict()
-
+event_dict = dict()
+removed_events = set()
 request_threshold = 79
 
-collect_user_ids_from_file()
+#gspread_client = gspread.service_account(filename='service_account.json')
+#sh = gspread_client.open("Test Sheet")
+#worksheet = sh.worksheet("ayo")
 
-tournies = dict(sorted(set_tournaments().items(), key=lambda item: item[1].start_time))
+collect_user_ids_from_file()
+# Sort results chronologically from earliest in the season to latest
+tournies = dict(sorted(collect_tournies_for_users().items(), key=lambda kvp: kvp[1].start_time))
 
 write_tourney_names_to_files(tournies)
-set_events(tournies)
 
-write_events_to_file(tournies)
 
-# Add all_events_removed_from_tourney idea
+
+# TODO: Add all_events_removed_from_tourney idea
+print('Process is complete.')

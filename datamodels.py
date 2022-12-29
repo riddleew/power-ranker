@@ -17,8 +17,9 @@ class Tournament:
         self.start_time =  datetime.fromtimestamp(tourney_dict['startAt'])
         self.start_time_str = self.start_time.strftime('%Y%m%d')
         self.is_online = tourney_dict['isOnline']
-        #events_list_of_dict = tourney_dict['events']
         self.events = []
+        # Used to keep track of which tracked players traveled to out of state tournaments
+        self.notable_entries = []
 
 class Event:
     def __init__(self, event_dict):
@@ -26,5 +27,4 @@ class Event:
         self.slug = event_dict['slug']
         self.name = event_dict['name']
         self.num_entrants = event_dict['numEntrants']
-        self.competition_tier = event_dict['competitionTier']
         self.is_teams_event = event_dict['teamRosterSize'] != None

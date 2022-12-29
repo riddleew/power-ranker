@@ -42,3 +42,42 @@ query GetEventByTournament($slug: String!) {
   }
 }
 '''
+
+get_events_by_user = '''
+query GetEventsByUser($userId: ID!) {
+  user(id: $userId, slug: null) {
+    name
+    player {
+      id
+      gamerTag
+    }
+    events(query: {
+      perPage: 100
+      page: 1
+      sortBy: "startAt desc"
+      filter: {
+        videogameId: [1386]
+        #eventType: 1
+      }
+    }) {
+      nodes {
+        id
+      	slug
+      	name
+      	numEntrants
+      	teamRosterSize {
+        	minPlayers
+      	}
+        tournament {
+          name
+        	slug
+        	startAt
+        	isOnline
+        	city
+        	addrState
+        }
+      }
+    }
+  }
+}
+'''
