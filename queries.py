@@ -4,6 +4,7 @@ query GetTournamentsByUser($userId: ID!) {
     name
     player {
       id
+      gamerTag
     }
     tournaments(query: {
       perPage: 100
@@ -26,7 +27,7 @@ query GetTournamentsByUser($userId: ID!) {
 }
 '''
 
-get_event_by_tournament = '''
+get_events_by_tournament = '''
 query GetEventByTournament($slug: String!) {
   tournament(slug: $slug) {
   	events(filter: {videogameId: [1386]}) {
@@ -34,6 +35,7 @@ query GetEventByTournament($slug: String!) {
       slug
       name
       numEntrants
+      startAt
       competitionTier
       teamRosterSize {
         minPlayers

@@ -1,57 +1,80 @@
-2022-10-01 10:00:00 --- The Mothership Invitational #1 ($500) --- Louisville, KY --- https://start.gg/tournament/the-mothership-invitational-1-500 
-2022-10-03 19:00:00 --- Don't Get Tilted #56 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-56-1 
-2022-10-04 18:00:00 --- Fight Night 59 --- Morehead, KY --- https://start.gg/tournament/fight-night-59 
-2022-10-05 19:00:00 --- Lunar Lounge #22 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-22 
-2022-10-07 11:00:00 --- The Big House 10 --- Detroit, MI --- https://start.gg/tournament/the-big-house-10 --- worry
-2022-10-07 19:00:00 --- Vandertilted #67 --- Nashville, TN --- https://start.gg/tournament/vandertilted-67 --- Ardeo
-2022-10-07 20:00:00 --- Meteor Smash #39 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-39 
-2022-10-08 19:00:00 --- Bad Wolf Battles —#7 --- Berea, KY --- https://start.gg/tournament/bad-wolf-battles-7-2 
-2022-10-10 19:00:00 --- Don't Get Tilted #57 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-57-1 
-2022-10-11 18:00:00 --- Fight Night 60 --- Morehead, KY --- https://start.gg/tournament/fight-night-60 
-2022-10-12 19:00:00 --- Lunar Lounge #23 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-23 
-2022-10-14 18:00:00 --- Apocalypse #4 --- Clarksville, TN --- https://start.gg/tournament/apocalypse-4 --- Ardeo
-2022-10-14 19:30:00 --- Smashed Bros 32! --- Louisville, KY --- https://start.gg/tournament/smashed-bros-32 
-2022-10-15 12:00:00 --- Cavalry Clash #8 --- Louisville, KY --- https://start.gg/tournament/cavalry-clash-8 
-2022-10-17 19:00:00 --- Don't Get Tilted #58 (Happy Halloween!!) --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-58-happy-halloween 
-2022-10-18 18:00:00 --- Fight Night 61 --- Morehead, KY --- https://start.gg/tournament/fight-night-61-1 
-2022-10-19 19:00:00 --- Lunar Lounge 24 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-24 
-2022-10-21 20:00:00 --- Meteor Smash #40 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-40 
-2022-10-22 10:30:00 --- Bourbon State Gaming: Double Barreled VI --- Lexington, KY --- https://start.gg/tournament/bourbon-state-gaming-double-barreled-vi 
-2022-10-25 18:00:00 --- Fight Night 62 --- Morehead, KY --- https://start.gg/tournament/fight-night-62 
-2022-10-26 19:00:00 --- Lunar Lounge #25 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-25 
-2022-10-28 16:30:00 --- Kumite in Tennessee 2022: The Finale --- Lebanon, TN --- https://start.gg/tournament/kumite-in-tennessee-2022-the-finale --- Jin, Wildz
-2022-10-28 19:00:00 --- Vandertilted #69 --- Nashville, TN --- https://start.gg/tournament/vandertilted-69 --- Jin, Ardeo
-2022-10-28 20:00:00 --- Smashed Bros #33! --- Louisville, KY --- https://start.gg/tournament/smashed-bros-33 
-2022-10-31 19:00:00 --- Don't Get Tilted #59 (Happy Halloween) --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-59-happy-halloween 
-2022-11-01 18:00:00 --- Fight Night 63 --- Morehead, KY --- https://start.gg/tournament/fight-night-63 
-2022-11-02 19:00:00 --- Lunar Lounge #26 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-26 
-2022-11-04 20:00:00 --- Meteor Smash #41 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-41-1 
-2022-11-07 19:00:00 --- Don't Get Tilted #60 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-60-1 
-2022-11-08 18:00:00 --- Fight Night 64 --- Morehead, KY --- https://start.gg/tournament/fight-night-64 
-2022-11-11 20:00:00 --- Smashed Bros #34! --- Louisville, KY --- https://start.gg/tournament/smashed-bros-34 
-2022-11-12 00:00:00 --- Cavalry Clash #9 --- Louisville, KY --- https://start.gg/tournament/cavalry-clash-9 
-2022-11-12 00:00:00 --- Campus Clash Fall 2022 --- Huntington, WV --- https://start.gg/tournament/campus-clash-fall-2022 --- Oofgo, KaputKing, Glight/CDM
-2022-11-14 19:00:00 --- Don't Get Tilted #61 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-61-1 
-2022-11-15 18:00:00 --- Fight Night 65 --- Morehead, KY --- https://start.gg/tournament/fight-night-65 
-2022-11-16 19:00:00 --- Lunar Lounge #28 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-28-1 
-2022-11-18 12:00:00 --- DreamHack Atlanta 2022 FGC --- Atlanta, GA --- https://start.gg/tournament/dreamhack-atlanta-2022-fgc --- F-Air Play, Vult
-2022-11-18 18:00:00 --- Apocalypse #7 --- Clarksville, TN --- https://start.gg/tournament/apocalypse-7-1 --- Ardeo
-2022-11-18 20:00:00 --- Meteor Smash #42 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-42-1 
-2022-11-19 11:00:00 --- Sheltowee Smash n' Strive II --- Morehead, KY --- https://start.gg/tournament/sheltowee-smash-n-strive-ii 
-2022-11-20 18:00:00 --- The Card N All Colosseum #36 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-36 
-2022-11-21 19:00:00 --- Don't Get Tilted #62 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-62-1 
-2022-11-23 19:00:00 --- Ignition #294 --- Skokie, IL --- https://start.gg/tournament/ignition-294 --- Butter
-2022-11-25 19:30:00 --- Smashed Bros 35! - $50 pot bonus - --- Louisville, KY --- https://start.gg/tournament/smashed-bros-35-50-pot-bonus 
-2022-11-26 11:00:00 --- Tripoint Stadium --- Romeoville, IL --- https://start.gg/tournament/tripoint-stadium --- Butter
-2022-11-28 19:00:00 --- Don't Get Tilted #63 (Happy Birthday Eve!!!) --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-63-happy-birthday-eve 
-2022-11-29 18:00:00 --- Fight Night 66 (Dead Week) --- Morehead, KY --- https://start.gg/tournament/fight-night-66-dead-week 
-2022-11-30 19:00:00 --- Lunar Lounge #29 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-29-2 
-2022-12-02 20:00:00 --- Meteor Smash #43 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-43 
-2022-12-05 19:00:00 --- Don't Get Tilted #64 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-64-1 
-2022-12-07 19:00:00 --- Lunar Lounge #30 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-30 
-2022-12-08 19:00:00 --- AL 119: Dragons Lair --- Newport, KY --- https://start.gg/tournament/al-119-dragons-lair 
-2022-12-09 20:00:00 --- Smashed Bros #36! - $50 Pot Bonus! --- Louisville, KY --- https://start.gg/tournament/smashed-bros-36-50-pot-bonus 
-2022-12-11 10:00:00 --- Chain Grab --- Canton, OH --- https://start.gg/tournament/chain-grab --- Mitch07
-2022-12-17 10:00:00 --- Flavortown Throwdown (Second Course) --- Hilliard, OH --- https://start.gg/tournament/flavortown-throwdown-second-course --- Wildz, Butter
-2022-12-21 18:00:00 --- Lunar Lounge #31 (Card N All Edition) --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-31-card-n-all-edition 
-2022-12-21 19:00:00 --- Ignition #298 --- Skokie, IL --- https://start.gg/tournament/ignition-298 --- KaputKing
+1) Smashed Bros 31! --- 09/30 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-31 
+2) Elite Smash Fridays #97 --- 09/30 --- Lakewood, CO --- https://start.gg/tournament/elite-smash-fridays-97 
+3) The Mothership Invitational #1 ($500) --- 10/01 --- Louisville, KY --- https://start.gg/tournament/the-mothership-invitational-1-500 
+4) The Card N All Colosseum #29 --- 10/02 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-29 
+5) Don't Get Tilted #56 --- 10/03 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-56-1 
+6) Fight Night 59 --- 10/04 --- Morehead, KY --- https://start.gg/tournament/fight-night-59 
+7) Lunar Lounge #22 --- 10/05 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-22 
+8) The Big House 10 --- 10/07 --- Detroit, MI --- https://start.gg/tournament/the-big-house-10 
+9) Vandertilted #67 --- 10/07 --- Nashville, TN --- https://start.gg/tournament/vandertilted-67 
+10) Meteor Smash #39 --- 10/07 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-39 
+11) Bad Wolf Battles —#7 --- 10/08 --- Berea, KY --- https://start.gg/tournament/bad-wolf-battles-7-2 
+12) The Card N All Colosseum #30 --- 10/09 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-30 
+13) Don't Get Tilted #57 --- 10/10 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-57-1 
+14) Fight Night 60 --- 10/11 --- Morehead, KY --- https://start.gg/tournament/fight-night-60 
+15) Lunar Lounge #23 --- 10/12 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-23 
+16) Apocalypse #4 --- 10/14 --- Clarksville, TN --- https://start.gg/tournament/apocalypse-4 
+17) Smashed Bros 32! --- 10/14 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-32 
+18) Cavalry Clash #8 --- 10/15 --- Louisville, KY --- https://start.gg/tournament/cavalry-clash-8 
+19) The Card N All Colosseum #31 --- 10/16 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-31 
+20) Don't Get Tilted #58 (Happy Halloween!!) --- 10/17 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-58-happy-halloween 
+21) Fight Night 61 --- 10/18 --- Morehead, KY --- https://start.gg/tournament/fight-night-61-1 
+22) Lunar Lounge 24 --- 10/19 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-24 
+23) Meteor Smash #40 --- 10/21 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-40 
+24) Bourbon State Gaming: Double Barreled VI --- 10/22 --- Lexington, KY --- https://start.gg/tournament/bourbon-state-gaming-double-barreled-vi 
+25) The Card N All Colosseum #32 --- 10/23 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-32 
+26) Fight Night 62 --- 10/25 --- Morehead, KY --- https://start.gg/tournament/fight-night-62 
+27) Lunar Lounge #25 --- 10/26 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-25 
+28) Kumite in Tennessee 2022: The Finale --- 10/28 --- Lebanon, TN --- https://start.gg/tournament/kumite-in-tennessee-2022-the-finale 
+29) Vandertilted #69 --- 10/28 --- Nashville, TN --- https://start.gg/tournament/vandertilted-69 
+30) Smashed Bros #33! --- 10/28 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-33 
+31) The Card N All Colosseum #33 - Happy Halloween! --- 10/30 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-33-happy-halloween 
+32) Don't Get Tilted #59 (Happy Halloween) --- 10/31 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-59-happy-halloween 
+33) Fight Night 63 --- 11/01 --- Morehead, KY --- https://start.gg/tournament/fight-night-63 
+34) The Coinbox #39 --- 11/02 --- None, None --- https://start.gg/tournament/the-coinbox-39 
+35) Lunar Lounge #26 --- 11/02 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-26 
+36) Meteor Smash #41 --- 11/04 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-41-1 
+37) The Card N All Colosseum #34 --- 11/06 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-34 
+38) Don't Get Tilted #60 --- 11/07 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-60-1 
+39) Fight Night 64 --- 11/08 --- Morehead, KY --- https://start.gg/tournament/fight-night-64 
+40) Lunar Lounge #27 --- 11/09 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-27-1 
+41) Sozin's Weeklies #11 (10$ Prize) [Hosted by Fire Nation] --- 11/09 --- None, None --- https://start.gg/tournament/sozin-s-weeklies-11-10-prize-hosted-by-fire-nation 
+42) Smashed Bros #34! --- 11/11 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-34 
+43) Cavalry Clash #9 --- 11/12 --- Louisville, KY --- https://start.gg/tournament/cavalry-clash-9 
+44) Campus Clash Fall 2022 --- 11/12 --- Huntington, WV --- https://start.gg/tournament/campus-clash-fall-2022 
+45) The Card N All Colosseum #35 --- 11/13 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-35 
+46) Don't Get Tilted #61 --- 11/14 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-61-1 
+47) Fight Night 65 --- 11/15 --- Morehead, KY --- https://start.gg/tournament/fight-night-65 
+48) Lunar Lounge #28 --- 11/16 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-28-1 
+49) DreamHack Atlanta 2022 FGC --- 11/18 --- Atlanta, GA --- https://start.gg/tournament/dreamhack-atlanta-2022-fgc 
+50) Apocalypse #7 --- 11/18 --- Clarksville, TN --- https://start.gg/tournament/apocalypse-7-1 
+51) Meteor Smash #42 --- 11/18 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-42-1 
+52) Sheltowee Smash n' Strive II --- 11/19 --- Morehead, KY --- https://start.gg/tournament/sheltowee-smash-n-strive-ii 
+53) The Card N All Colosseum #36 --- 11/20 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-36 
+54) Don't Get Tilted #62 --- 11/21 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-62-1 
+55) The Coinbox #42 --- 11/23 --- None, None --- https://start.gg/tournament/the-coinbox-42 
+56) Ignition #294 --- 11/23 --- Skokie, IL --- https://start.gg/tournament/ignition-294 
+57) Smashed Bros 35! - $50 pot bonus - --- 11/25 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-35-50-pot-bonus 
+58) Tripoint Stadium --- 11/26 --- Romeoville, IL --- https://start.gg/tournament/tripoint-stadium 
+59) $100 GGtoor x Nasty Weekly Workout #39 (FREE!) --- 11/26 --- None, None --- https://start.gg/tournament/100-ggtoor-x-nasty-weekly-workout-39-free 
+60) The Card N All Colosseum #37 --- 11/27 --- Louisville, KY --- https://start.gg/tournament/the-card-n-all-colosseum-37 
+61) Don't Get Tilted #63 (Happy Birthday Eve!!!) --- 11/28 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-63-happy-birthday-eve 
+62) Fight Night 66 (Dead Week) --- 11/29 --- Morehead, KY --- https://start.gg/tournament/fight-night-66-dead-week 
+63) Lunar Lounge #29 --- 11/30 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-29-2 
+64) Meteor Smash #43 --- 12/02 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-43 
+65) Don't Get Tilted #64 --- 12/05 --- Lexington, KY --- https://start.gg/tournament/don-t-get-tilted-64-1 
+66) Lunar Lounge #30 --- 12/07 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-30 
+67) AL 119: Dragons Lair --- 12/08 --- Newport, KY --- https://start.gg/tournament/al-119-dragons-lair 
+68) Smash World Tour Championships 2022 --- 12/09 --- San Antonio, TX --- https://start.gg/tournament/smash-world-tour-championships-2022 
+69) Smashed Bros #36! - $50 Pot Bonus! --- 12/09 --- Louisville, KY --- https://start.gg/tournament/smashed-bros-36-50-pot-bonus 
+70) Chain Grab --- 12/11 --- Canton, OH --- https://start.gg/tournament/chain-grab 
+71) The Coinbox #45 --- 12/14 --- None, None --- https://start.gg/tournament/the-coinbox-45 
+72) Flavortown Throwdown (Second Course) --- 12/17 --- Hilliard, OH --- https://start.gg/tournament/flavortown-throwdown-second-course 
+73) The Coinbox #46 --- 12/21 --- None, None --- https://start.gg/tournament/the-coinbox-46 
+74) Lunar Lounge #31 (Card N All Edition) --- 12/21 --- Louisville, KY --- https://start.gg/tournament/lunar-lounge-31-card-n-all-edition 
+75) Ignition #298 --- 12/21 --- Skokie, IL --- https://start.gg/tournament/ignition-298 
+76) Smashing Legends #312 --- 12/21 --- None, None --- https://start.gg/tournament/smashing-legends-312 
+77) Cancelled --- 12/23 --- Louisville, KY --- https://start.gg/tournament/cancelled-54 
+78) The Coinbox #47 --- 12/28 --- None, None --- https://start.gg/tournament/the-coinbox-47 
+79) Ignition #299 --- 12/28 --- Skokie, IL --- https://start.gg/tournament/ignition-299 
+80) Meteor Smash #44 --- 12/30 --- Louisville, KY --- https://start.gg/tournament/meteor-smash-44 

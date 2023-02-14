@@ -29,4 +29,17 @@ class Event:
         self.slug = event_dict['slug']
         self.name = event_dict['name']
         self.num_entrants = event_dict['numEntrants']
+        self.start_time =  datetime.fromtimestamp(event_dict['startAt'])
+        self.start_time_str = self.start_time.strftime('%Y%m%d')
         self.is_teams_event = event_dict['teamRosterSize'] != None
+
+    def __eq__(self, other):
+        if (self.id == other.id and self.slug == other.slug and self.name == other.name
+            and self.num_entrants == other.num_entrants and self.is_teams_event == other.is_teams_event):
+            return True
+
+        return False
+
+    def __hash__(self):
+        return (hash(self.id) ^ hash(self.slug) ^ hash(self.name) ^
+                hash(self.num_entrants) ^ hash(self.is_teams_event))
