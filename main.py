@@ -67,6 +67,7 @@ def execute_query(query, variables):
   """Executes GraphQL queries. Cycles through multiple tokens to avoid request limits."""
   global client_idx
   global clients
+
   if client_idx == len(clients):
     client_idx = 0
 
@@ -247,9 +248,6 @@ def set_events(tournies):
   """Queries events per tournaments. Attempts to filter out non-Singles events.
   Adds results to collection.
   """
-  global client
-  filter_names = {'squad strike', 'crew battle', 'redemption', 'ladder', 'doubles', 'amateur'}
-  
   for tourney_slug, tourney_obj in tournies.items():
     print(f'\n{tourney_obj.name}')
     query_variables = {"slug": tourney_slug}
@@ -261,31 +259,15 @@ def set_events(tournies):
 
     for event_json in res_data['data']['tournament']['events']:
       event = Event(event_json)
+      print(f'---{event.name}')
 
       # Filter out events that are most likely not Singles events
-      if event.is_teams_event:
-        remove_event(event, tourney_obj)
-        continue
-      is_not_singles = 1 in [name in event.name.lower() for name in filter_names]
-      if is_not_singles:
-        remove_event(event, tourney_obj)
-        continue
-      if event.num_entrants < 12 and event.start_time < datetime(2022, 11, 14):
-        remove_event(event, tourney_obj)
-        continue
-      if event.num_entrants < 8 and event.start_time >= datetime(2022, 11, 14):
-        remove_event(event, tourney_obj)
-        continue
-      if event.is_teams_event:
-        remove_event(event, tourney_obj)
-        continue
-      if event.activity_state == 'CREATED':
+      if (is_event_eligible(event)):
+         tournies[tourney_slug].events.append(event)
+      else:
         remove_event(event, tourney_obj)
         continue
       
-      tournies[tourney_slug].events.append(event)
-      print(f'---{event.name}')
-
   print('#########################################') 
   temp_dict = tournies.copy()
   for tourney_slug, tourney_obj in temp_dict.items():
@@ -294,12 +276,43 @@ def set_events(tournies):
       tournies.pop(tourney_slug)
 
 
+def is_event_eligible(event):
+  """Checks for various conditions that would make an Event ineligible for PR."""
+  
+  is_eligible = True
+
+  filter_names = {'squad strike', 'crew battle', 'redemption', 'ladder', 'doubles', 'amateur'}
+  is_not_singles = 1 in [name in event.name.lower() for name in filter_names]
+  if is_not_singles:
+    is_eligible = False
+  
+  if event.is_teams_event:
+      is_eligible = False
+  
+  if event.num_entrants < 12 and event.start_time < datetime(2022, 11, 14):
+    is_eligible = False
+  
+  if event.num_entrants < 8 and event.start_time >= datetime(2022, 11, 14):
+    is_eligible = False
+  
+  if event.is_teams_event:
+    is_eligible = False
+  
+  if event.activity_state == 'CREATED':
+    is_eligible = False
+  
+  return is_eligible
+
+
 def remove_event(event, tourney):
+  """Removes event from collection."""
+
   print(f'Removing event:  {tourney.name} -- {event.name}')
   removed_events.add(event)
 
 
 def write_user_stats_to_file(user_stats):
+  """Writes user stats to file."""
   with open('user_stats.txt', 'w') as file:
     for user in user_stats.values():
       file.write(f'{user.gamer_tag} --- All tournies: {len(user.all_tournies)} --- KY events: {len(user.ky_tournies)}\n')
