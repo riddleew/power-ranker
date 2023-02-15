@@ -65,6 +65,7 @@ def set_tournaments():
 
 def execute_query(query, variables):
   """Executes GraphQL queries. Cycles through multiple tokens to avoid request limits."""
+
   global client_idx
   global clients
 
@@ -313,6 +314,7 @@ def remove_event(event, tourney):
 
 def write_user_stats_to_file(user_stats):
   """Writes user stats to file."""
+
   with open('user_stats.txt', 'w') as file:
     for user in user_stats.values():
       file.write(f'{user.gamer_tag} --- All tournies: {len(user.all_tournies)} --- KY events: {len(user.ky_tournies)}\n')
@@ -320,6 +322,7 @@ def write_user_stats_to_file(user_stats):
 
 def init_clients():
   """Retrieves oauth tokens from a text file."""
+  
   api_version = 'alpha'
   clients = []
   with open('tokens.txt', 'r') as file:
