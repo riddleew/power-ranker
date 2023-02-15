@@ -32,6 +32,7 @@ class Event:
         self.start_time =  datetime.fromtimestamp(event_dict['startAt'])
         self.start_time_str = self.start_time.strftime('%Y%m%d')
         self.is_teams_event = event_dict['teamRosterSize'] != None
+        self.activity_state = event_dict['state']
 
     def __eq__(self, other):
         if (self.id == other.id and self.slug == other.slug and self.name == other.name
