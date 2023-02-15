@@ -99,6 +99,7 @@ def execute_query(query, variables):
     if request_count == request_threshold:
       reset_client()
     try:
+      print(f'{auth_tokens[current_token_index]}\n')
       request_count += 1
       result = client.execute(query, variables)
       return result
@@ -254,6 +255,9 @@ def collect_tournies_for_users_last_season():
       
       tourney = Tournament(tourney_json)
 
+      if tourney.is_online:
+        continue
+
       if tourney.start_time < cut_off_date_start or tourney.start_time > cut_off_date_end:
         # If three consecutive tournaments being processed is outside of the season's window,
         # we can feel confident that the remaining tournaments to process are also out of bounds
@@ -262,13 +266,12 @@ def collect_tournies_for_users_last_season():
           if out_of_bounds_ctr == 3:
             break
           continue
-      else:
+      else: # Within season window
         season_window_found = True
         out_of_bounds_ctr = 0
 
         tourney_dict[tourney.slug] = tourney
         user_to_tournies[user_id] = tourney.slug
-
 
   return tourney_dict
 
@@ -297,7 +300,6 @@ def set_events(tournies):
       is_not_singles = 1 in [name in event.name.lower() for name in filter_names]
       if is_not_singles:
         continue
-
       if event.num_entrants < 12 and event.start_time < datetime(2022, 11, 14):
         removed_events.add(event)
         continue
@@ -310,6 +312,14 @@ def set_events(tournies):
       
       tournies[tourney_slug].events.append(event)
       print(f'---{event.name}')
+
+   
+  print('#########################################') 
+  temp_dict = tournies.copy()
+  for tourney_slug, tourney_obj in temp_dict.items():
+    if tourney_obj.events == []:
+      print(f'Removing  {tourney_obj.name}\n')
+      tournies.pop(tourney_slug)
 
 def write_user_stats_to_file(user_stats):
   with open('user_stats.txt', 'w') as file:
@@ -352,7 +362,7 @@ tournies = dict(sorted(collect_tournies_for_users_last_season().items(), key=lam
 set_events(tournies)
 write_tourney_names_to_files(tournies)
 write_user_stats_to_file(user_stats)
-write_removed_events_to_files(removed_events)
+#write_removed_events_to_files(removed_events)
 
 
 # TODO: Add all_events_removed_from_tourney idea
