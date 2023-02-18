@@ -3,7 +3,7 @@ import json
 from urllib.error import URLError
 
 from graphqlclient import GraphQLClient
-#import gspread
+import gspread
 
 import queries
 from datamodels import *
@@ -219,8 +219,8 @@ def collect_tournies_for_users_last_season():
 
     for tourney_json in res_data['data']['user']['tournaments']['nodes']:
       season_window_found = False
-      cut_off_date_start = datetime(2022, 9, 30)
-      cut_off_date_end = datetime(2022, 12, 31)
+      cut_off_date_start = datetime(2023, 1, 1)
+      cut_off_date_end = datetime(2023, 3, 31)
       
       tourney = Tournament(tourney_json)
       
@@ -288,7 +288,7 @@ def is_event_eligible(event):
     is_eligible = False
   
   if event.is_teams_event:
-      is_eligible = False
+    is_eligible = False
   
   if event.num_entrants < 12 and event.start_time < datetime(2022, 11, 14):
     is_eligible = False
@@ -334,6 +334,61 @@ def init_clients():
   return clients
       
 
+def write_tourney_info_to_google_sheet(tournies):
+  """Writes tourney data to a specified Google Sheet's Worksheet."""
+
+  gspread_client = gspread.service_account(filename='service_account.json')
+  sh = gspread_client.open("Test Sheet")
+  ws = sh.worksheet("ayo")
+  
+  row_num = 1
+  rows = []
+
+  for tourney in tournies.values():
+    row = []
+    row.append(str(row_num))
+    row.append(tourney.name)
+    row.append(tourney.start_time.strftime("%m/%d"))
+    entrants = get_entrants(tourney)
+    row.append(entrants)
+    row = add_blank_fields_to_row(row, 16)
+    row.append(", ".join(tourney.notable_entries))
+    row.append(f'https://start.gg/{tourney.slug}/details')
+
+    rows.append(row)
+
+    row_num += 1
+
+  ws.update('A1', rows)
+
+
+def add_blank_fields_to_row(row, num_fields):
+  """Adds the provided number of empty fields to a row."""
+
+  for i in range(num_fields):
+    row.append('')
+  
+  return row
+
+
+def get_entrants(tourney):
+  '''Fetches the likely number of entrants for a Singles event. 
+  Takes the highest entrant count from all the (filtered) entrants a tourney has.
+  If a tournament has multiple eligible events, this function will most likely return incorrect results.
+  '''
+  entrants = 0
+  for event in tourney.events:
+    if event.num_entrants > entrants:
+      entrants = event.num_entrants
+  
+  if entrants == 0:
+    entrants = 'Error'
+  else:
+    entrants = str(entrants)
+
+  return entrants
+
+
 client_idx = 0
 current_token_index = 0
 request_count = 0
@@ -355,10 +410,6 @@ removed_events = set()      #event_slug
 removed_tournies = set()    #tourney_slug
 ##### End Collections #####
 
-#gspread_client = gspread.service_account(filename='service_account.json')
-#sh = gspread_client.open("Test Sheet")
-#worksheet = sh.worksheet("ayo")
-
 collect_user_ids_from_file()
 # Sort results chronologically from earliest in the season to latest
 tournies = dict(sorted(collect_tournies_for_users_last_season().items(), key=lambda kvp: kvp[1].start_time))
@@ -366,6 +417,7 @@ tournies = dict(sorted(collect_tournies_for_users_last_season().items(), key=lam
 set_events(tournies)
 write_tourney_names_to_files(tournies)
 write_user_stats_to_file(user_stats)
+write_tourney_info_to_google_sheet(tournies)
 #write_removed_events_to_files(removed_events)
 
 
