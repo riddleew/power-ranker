@@ -1,40 +1,24 @@
-query TournamentsByState($perPage: Int, $state: String!) {
-  tournaments(query: {
-    perPage: $perPage
-    filter: {
-      addrState: $state
-      videogameIds:[1386]
-    }
-  }) {
-    nodes {
-      id
-      name
-      addrState
-      events {
-        id
-      	name
-        entrants (query: {
-          perPage: $perPage
-        }) {
-          nodes {
-            name
-            participants {
-              id
-              user {
-                id
-              }
-            }
-          }
+query GetUserByTournament($slug: String!) {
+  tournament(slug: $slug) {
+  	participants(query: {
+      page:1,
+      perPage: 100,
+      sortBy: "ASC",
+      filter: {}
+    }) {
+      nodes {
+        gamerTag,
+        user {
+          id
         }
       }
     }
   }
-},
+}
 
 
 
 
 {
-  "perPage": 5,
-  "state": "KY"
+  "slug": "tournament/lunar-lounge-38"
 }
