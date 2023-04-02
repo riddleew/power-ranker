@@ -16,7 +16,11 @@ class Tournament:
         self.name = tourney_dict['name']
         self.city = tourney_dict['city']
         self.state = tourney_dict['addrState']
-        self.start_time =  datetime.fromtimestamp(tourney_dict['startAt'])
+        try:
+            self.start_time =  datetime.fromtimestamp(tourney_dict['startAt'])
+        except:
+            print("Start date for " + tourney_dict['name'] + " is invalid.")
+            self.start_time = datetime.fromtimestamp(0)
         self.start_time_str = self.start_time.strftime('%Y%m%d')
         self.is_online = tourney_dict['isOnline']
         self.events = []
